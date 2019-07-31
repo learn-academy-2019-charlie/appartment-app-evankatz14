@@ -1,0 +1,45 @@
+<%= form_with(modle: apartment, local: true) do |form| %>
+  <% if aparment.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(apartment.errors.count, "error") %>prohibited this apartment from being saved:</h2>
+        
+        <ul>
+            <% aparment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+        
+        <div class = 'field'>
+            <%= form.label :street_number %>
+            <%= form.text_field :street_number %>
+        </div>
+        
+        <div class = 'field'>
+            <%= form.label :street_name %>
+            <%= form.text_field :street_name %>
+        </div>
+        
+        <div class = 'field'>
+            <%= form.label :city %>
+            <%= form.text_field :city %>
+        </div>
+        
+        <div class = 'field'>
+            <%= form.label :zip_code %>
+            <%= form.text_field :zip_code %>
+        </div>
+        
+        <div class = 'field'>
+            <%= form.label :state %>
+            <%= form.text_field :state %>
+        </div>
+        
+        <div class = 'field'>
+            <%= form.label :country %>
+            <%= form.text_field :country %>
+        </div>
+        
+        <div class = 'actions'>
+            <%= form.submit %>
+        </div>
+        </ul>
+    </div>
